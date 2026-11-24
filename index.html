@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>มนตร์จันทร์ล้านนา</title>
+<link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold:#eac47d;
+  --night:#071326;
+  --pink:#ed91ae;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--night);color:#fff0d5;
+  font-family:'Kanit',sans-serif;
+}
+.hero{
+  min-height:100svh;position:relative;display:grid;
+  place-items:center;text-align:center;overflow:hidden;
+  background:
+    linear-gradient(180deg,#03081722 20%,#07132655 65%,#071326 100%),
+    url("IMG_4289.jpeg") center center/cover no-repeat;
+}
+.hero:after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse,transparent 20%,#02081766 100%);
+}
+.content{position:relative;z-index:2;padding:35px 18px 70px}
+.kicker{letter-spacing:5px;font-size:11px;color:#f4d18c}
+h1{
+  font-family:'Charm',cursive;font-size:clamp(48px,10vw,88px);
+  font-weight:400;color:#ffe2a3;margin:15px 0 0;
+  text-shadow:0 0 30px #e6a84c99,0 3px 15px #000;
+}
+.subtitle{font-family:'Charm',cursive;font-size:clamp(20px,4vw,29px)}
+.tagline{font-size:13px;letter-spacing:2px;color:#f4dfbd;margin:22px 0 35px}
+.gold-btn{
+  display:inline-block;padding:13px 34px;border-radius:40px;
+  background:linear-gradient(135deg,#ffe8b0,#c48b42);
+  color:#291b0d;text-decoration:none;border:1px solid #f8dca1;
+  box-shadow:0 0 25px #e5b45b66;cursor:pointer;
+}
+.lanterns{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.lantern{
+  position:absolute;bottom:-50px;width:11px;height:17px;
+  border-radius:3px;background:linear-gradient(#ffe5a0,#e88732);
+  box-shadow:0 0 15px 5px #ffae4777;
+  animation:rise linear infinite;
+}
+@keyframes rise{
+  from{transform:translateY(0);opacity:0}
+  10%{opacity:.9}
+  to{transform:translateY(-120vh);opacity:0}
+}
+section{padding:75px 18px;text-align:center}
+.experience{
+  background:radial-gradient(ellipse at top,#1a304b,#071326 70%);
+}
+.kicker2{font-size:11px;letter-spacing:4px;color:var(--gold)}
+h2{font:400 clamp(34px,7vw,48px) 'Charm',cursive;color:#f4d49b;margin:12px 0}
+.intro{font-size:14px;line-height:2;color:#c9c6c2;margin-bottom:35px}
+.panel{
+  max-width:760px;margin:auto;padding:28px 20px;
+  border:1px solid #c99e5b66;border-radius:22px;
+  background:linear-gradient(145deg,#182a43,#0a1729);
+  box-shadow:0 20px 60px #0006;
+}
+h3{font:400 27px 'Charm',cursive;color:#f3d29b;margin:0 0 22px}
+.krathongs{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.krathong{
+  background:#081629;color:#f4e5cc;border:1px solid #c99e5b55;
+  border-radius:14px;padding:12px 3px;cursor:pointer;
+}
+.krathong .flower{display:block;font-size:31px;margin-bottom:7px}
+.krathong small{font-size:11px}
+.krathong.selected{
+  border-color:#ffdc91;background:#59452e;
+  box-shadow:0 0 17px #e6b65b55;
+}
+.colors{display:flex;justify-content:center;gap:17px;margin:20px 0 30px}
+.color{
+  width:30px;height:30px;border-radius:50%;
+  border:2px solid #fff9;cursor:pointer;
+}
+.color.selected{outline:2px solid #f5d28d;outline-offset:4px}
+textarea{
+  width:100%;min-height:100px;padding:14px;
+  border-radius:12px;border:1px solid #b9905c88;
+  background:#071326;color:#fff0d5;resize:vertical;
+  font:14px 'Kanit',sans-serif;
+}
+textarea::placeholder{color:#aaa}
+.counter{text-align:right;font-size:11px;color:#aaa;margin:5px 0 18px}
+.launch{
+  padding:13px 35px;border:0;border-radius:40px;
+  background:linear-gradient(135deg,#ffe8b0,#c48b42);
+  color:#291b0d;cursor:pointer;
+}
+.water{
+  height:270px;margin-top:30px;position:relative;overflow:hidden;
+  border:1px solid #c99e5b66;border-radius:17px;
+  background:
+    linear-gradient(#07132655,#071326aa),
+    url("IMG_4289.jpeg") center bottom/cover;
+}
+.water:after{
+  content:"";position:absolute;inset:45% 0 0;
+  background:linear-gradient(180deg,#102c4c66,#020b19dd);
+}
+.water-title{
+  position:absolute;z-index:2;top:17px;left:0;right:0;
+  font:22px 'Charm',cursive;color:#f4d49b;
+}
+.boat{
+  position:absolute;z-index:3;left:50%;top:60%;
+  transform:translate(-50%,-50%);
+  font-size:44px;filter:drop-shadow(0 0 14px #ffbd5c);
+  animation:bob 3s ease-in-out infinite;
+}
+@keyframes bob{
+  0%,100%{transform:translate(-50%,-50%) rotate(-4deg)}
+  50%{transform:translate(-50%,-65%) rotate(4deg)}
+}
+.prayer{
+  position:absolute;z-index:4;bottom:17px;left:10px;right:10px;
+  font:18px 'Charm',cursive;color:#ffe7b8;
+  text-shadow:0 2px 8px #000;
+}
+.footer{padding:25px;text-align:center;color:#9299a8;font-size:11px}
+@media(max-width:520px){
+  .krathongs{grid-template-columns:repeat(3,1fr)}
+  .panel{padding:23px 13px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="lanterns" id="lanterns"></div>
+  <div class="content">
+    <div class="kicker">✦ THE ENCHANTED HIMMAPAN ✦</div>
+    <h1>มนตร์จันทร์ล้านนา</h1>
+    <div class="subtitle">มนตราแห่งคำอธิษฐาน ณ ป่าหิมพานต์</div>
+    <p class="tagline">คืนแห่งแสงจันทร์ · แสงโคม · และคำอธิษฐาน</p>
+    <a class="gold-btn" href="#experience">ร่วมลอยกระทง ✧</a>
+  </div>
+</header>
+
+<section class="experience" id="experience">
+  <div class="kicker2">A NIGHT OF WISHES</div>
+  <h2>ฝากคำอธิษฐานไว้กับแสงจันทร์</h2>
+  <p class="intro">
+    เลือกกระทงดอกไม้ที่ชอบ เลือกแสงแห่งคำอธิษฐาน<br>
+    แล้วปล่อยให้สายน้ำพาความปรารถนาของคุณเดินทางไป
+  </p>
+
+  <div class="panel">
+    <h3>เลือกกระทงของคุณ</h3>
+    <div class="krathongs">
+      <button class="krathong selected" data-flower="🪷">
+        <span class="flower">🪷</span><small>บัวหลวง</small>
+      </button>
+      <button class="krathong" data-flower="🌸">
+        <span class="flower">🌸</span><small>ดอกซากุระ</small>
+      </button>
+      <button class="krathong" data-flower="🌺">
+        <span class="flower">🌺</span><small>ดอกชบา</small>
+      </button>
+      <button class="krathong" data-flower="🏵️">
+        <span class="flower">🏵️</span><small>ดาวเรือง</small>
+      </button>
+      <button class="krathong" data-flower="🌼">
+        <span class="flower">🌼</span><small>มะลิทอง</small>
+      </button>
+    </div>
+
+    <h3>เลือกสีแห่งแสง</h3>
+    <div class="colors">
+      <button class="color selected" data-color="#ffc66e" style="background:#ffc66e" aria-label="ทอง"></button>
+      <button class="color" data-color="#ff8da8" style="background:#ff8da8" aria-label="ชมพู"></button>
+      <button class="color" data-color="#a5d9ff" style="background:#a5d9ff" aria-label="ฟ้า"></button>
+      <button class="color" data-color="#c9a6ff" style="background:#c9a6ff" aria-label="ม่วง"></button>
+      <button class="color" data-color="#c3f0b0" style="background:#c3f0b0" aria-label="เขียว"></button>
+    </div>
+
+    <h3>เขียนคำอธิษฐาน</h3>
+    <textarea id="wish" maxlength="160" placeholder="ขอให้แสงจันทร์นำพาสิ่งดีงามมาสู่ชีวิต..."></textarea>
+    <div class="counter"><span id="count">0</span>/160 ตัวอักษร</div>
+
+    <button class="launch" id="launch">🪷 ลอยกระทง</button>
+
+    <div class="water" id="water">
+      <div class="water-title">สายน้ำแห่งคำอธิษฐาน</div>
+      <div class="boat" id="boat">🪷</div>
+      <div class="prayer" id="prayer">ขอให้ทุกคำอธิษฐานเป็นจริง</div>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  ✦ มนตร์จันทร์ล้านนา · THE ENCHANTED HIMMAPAN ✦<br>
+  ขอให้ค่ำคืนนี้เต็มไปด้วยความสุขและความหวัง
+</div>
+
+<script>
+const lanterns=document.getElementById('lanterns');
+for(let i=0;i<65;i++){
+  const l=document.createElement('span');
+  l.className='lantern';
+  l.style.left=Math.random()*100+'%';
+  l.style.animationDuration=(9+Math.random()*15)+'s';
+  l.style.animationDelay=(-Math.random()*20)+'s';
+  l.style.transform=`scale(${0.5+Math.random()})`;
+  lanterns.appendChild(l);
+}
+
+let selectedFlower='🪷';
+let selectedColor='#ffc66e';
+
+document.querySelectorAll('.krathong').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.krathong').forEach(x=>x.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedFlower=btn.dataset.flower;
+    document.getElementById('boat').textContent=selectedFlower;
+  });
+});
+
+document.querySelectorAll('.color').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.color').forEach(x=>x.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedColor=btn.dataset.color;
+    document.getElementById('boat').style.filter=
+      `drop-shadow(0 0 18px ${selectedColor})`;
+  });
+});
+
+const wish=document.getElementById('wish');
+wish.addEventListener('input',()=>{
+  document.getElementById('count').textContent=wish.value.length;
+});
+
+document.getElementById('launch').addEventListener('click',()=>{
+  const boat=document.getElementById('boat');
+  const prayer=document.getElementById('prayer');
+  boat.textContent=selectedFlower;
+  boat.style.filter=`drop-shadow(0 0 20px ${selectedColor})`;
+  prayer.textContent=wish.value.trim()||'ขอให้ทุกคำอธิษฐานเป็นจริง';
+  boat.animate([
+    {left:'50%',top:'60%',opacity:0.3},
+    {left:'50%',top:'60%',opacity:1},
+    {left:'75%',top:'52%',opacity:0.9}
+  ],{duration:3500,easing:'ease-in-out'});
+  document.getElementById('water').scrollIntoView({behavior:'smooth',block:'center'});
+});
+</script>
+</body>
+</html>
